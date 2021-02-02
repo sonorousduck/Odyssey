@@ -17,7 +17,11 @@ const app = Vue.createApp({
 
 
     created () {
-        console.log('This has been successfully created!')
+        
+        
+        
+
+
 
 
     },
