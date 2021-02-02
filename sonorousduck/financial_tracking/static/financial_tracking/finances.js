@@ -8,9 +8,9 @@ const app = Vue.createApp({
     data() {
         return {
             financesData: null,
-            financesAPI: `http://${location.hostname}:8000/financial_tracker/`,
+            financesAPI: `http://${location.hostname}:8000/financial_tracking/`,
             indicator: 'YAY',
-
+            data: false,
 
         }
     },
@@ -18,6 +18,11 @@ const app = Vue.createApp({
 
     created () {
         
+        fetch(this.financesAPI + `data/`)
+            .then(response => response.json())
+            .then(json => {
+                this.data = json;
+            });
         
         
 

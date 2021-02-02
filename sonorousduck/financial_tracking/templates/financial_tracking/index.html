@@ -20,6 +20,18 @@
     <h1 id="test"> TESTING </h1>
 
     <div id="finances">
+
+    {% if data %}
+        <ul>
+            {% for dataPoint in data %}
+            <ul>
+                <li> {{ dataPoint.description }}  </li>
+            </ul>
+
+            {% endfor %}
+        </ul>
+    {% endif %}
+
         <h1 id=indicator> [% indicator %] </h1>
     </div>
 
