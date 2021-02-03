@@ -8,28 +8,39 @@ const app = Vue.createApp({
     data() {
         return {
             financesData: null,
-            financesAPI: `http://${location.hostname}:8000/financial_tracking/`,
+            financesAPI: `http://${location.hostname}:8000/financial_tracking/data/`,
             indicator: 'YAY',
-            data: false,
+            data: [],
 
-        }
+        };
     },
 
 
     created () {
-        
-        fetch(this.financesAPI + `data/`)
-            .then(response => response.json())
-            .then(json => {
-                this.data = json;
-            });
-        
+        this.data = this.getExpenses(); 
         
 
 
 
 
     },
+
+    
+    methods: {
+        
+        getExpenses() {
+            fetch(this.financesAPI)
+                .then(response => response.json())
+                .then(json => {
+                    this.data = json;
+
+                });
+        }
+
+
+
+    }
+
 
 });
 

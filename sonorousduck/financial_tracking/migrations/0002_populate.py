@@ -13,6 +13,11 @@ def populate_db(apps, schema_editor):
     expense_1 = Expenses(description="Dr. Pepper", date=timezone.now())
     expense_1.save()
 
+    
+    expense_2 = Expenses(description="Taco Time", date=timezone.now())
+    expense_2.save()
+
+
     income_1 = Income(description="AMLC pay", date=timezone.now())
     income_1.save()
 
