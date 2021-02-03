@@ -15,22 +15,23 @@
 
     <body>
 
-    <h1 id="test"> TESTING </h1>
+        <h1 id="test"> TESTING </h1>
 
-    <div id="finances">
+        <div id="finances">
 
-    {% if data %}
-        <ul>
-            {% for dataPoint in data %}
-            <ul>
-                <li> {{ dataPoint.description }}  </li>
-            </ul>
 
-            {% endfor %}
-        </ul>
-    {% endif %}
+            <div id=expenses>
+                <div v-if="dataLoading"> Loading.... </div>
+                <div v-else>
+                    <div v-for='data in dataList'>
+                        <div>
+                            <h5> [% data['description'] %] $[% data['price'] %] [% data['date'] %]  </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <h1 id=indicator> [% indicator %] </h1>
+            <h1 id=indicator> [% indicator %] </h1>
     </div>
 
 

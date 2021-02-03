@@ -10,15 +10,15 @@ def populate_db(apps, schema_editor):
     Income = apps.get_model('financial_tracking', 'Income')
 
 
-    expense_1 = Expenses(description="Dr. Pepper", date=timezone.now())
+    expense_1 = Expenses(description="Dr. Pepper", price='1.25', date=timezone.now())
     expense_1.save()
 
     
-    expense_2 = Expenses(description="Taco Time", date=timezone.now())
+    expense_2 = Expenses(description="Taco Time", price='1.25', date=timezone.now())
     expense_2.save()
 
 
-    income_1 = Income(description="AMLC pay", date=timezone.now())
+    income_1 = Income(description="AMLC pay", price='1.25', date=timezone.now())
     income_1.save()
 
 class Migration(migrations.Migration):

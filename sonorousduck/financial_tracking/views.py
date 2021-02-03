@@ -21,7 +21,7 @@ def data(request):
     # Create the JSON object
 
     for obj in allData:
-        JSONobj.append({'description': obj.description, 'date': obj.date})
+        JSONobj.append({'description': obj.description, 'price': obj.price, 'date': obj.date})
 
 
     response = JsonResponse(JSONobj, safe=False)
