@@ -10,11 +10,7 @@ const app = Vue.createApp({
             financesData: null,
             financesAPI: `http://${location.hostname}:8000/financial_tracking/data/`,
             indicator: 'YAY',
-<<<<<<< HEAD
             data: [],
-=======
-            data: true, 
->>>>>>> refs/remotes/origin/master
 
         };
     },
