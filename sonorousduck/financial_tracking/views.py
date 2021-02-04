@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from .models import Expenses, Income
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
+from datetime import datetime
+from django.urls import reverse
+from django.utils import timezone
 
 # Create your views here.
 
@@ -28,3 +31,28 @@ def data(request):
     response['Access-Control-Allow-Origin'] = '*'
 
     return response
+
+def addTransaction(request):
+
+    try: 
+        print(request.POST['description'])
+        print(request.POST['price'])
+        print(timezone.now())
+
+
+        print("We were at least this successful")
+
+        transaction = Expenses(description=request.POST['description'], price=request.POST['price'], date=timezone.now())
+        transaction.save()
+
+
+
+    except KeyError:
+        return render(request, {'error_message': 'Incorrect Usage'})
+
+    return HttpResponseRedirect(reverse('main:index'))
+
+
+
+
+

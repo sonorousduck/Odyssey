@@ -31,6 +31,17 @@
                 </div>
             </div>
 
+
+            <form method="post">{% csrf_token %}
+                <input type="text" id="description">
+                <input type="number" id="price">
+                <!-- Eventually add date -->
+
+                <button type="button" id="addGoal" @click="addGoal"> Add </button>
+            
+            </form>
+
+
             <h1 id=indicator> [% indicator %] </h1>
     </div>
 
