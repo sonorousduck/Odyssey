@@ -1,7 +1,13 @@
+0) Change form to have Method='POST'. This should fix a lot of my errors (along with pointing it to the correct URL)
 1) Create an add 'add expenses button'
 2) Make it look a good amount better
 3) Get income and add 'add income button'
 4) Make it look a lot better
 5) 'Finalize' it, meaning don't delete my database anymore
 6) Look into deploying it on my raspberry pi
+
+
+
+
+
 
